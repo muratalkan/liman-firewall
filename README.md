@@ -1,6 +1,8 @@
 # Liman MYS | Firewall Eklentisi
 
-UFW eklentisi sistem üzerinde dinleyen prosesleri tablo şeklinde gösterir ve bu dinleyen proseslere izin vermenize veya engellemenize olanak sağlar.
+UFW eklentisi sistem üzerinde dinleyen prosesleri tablo şeklinde gösterir ve bu dinleyen proseslere izin vermenize veya engellemenize olanak sağlar. Tüm oluşturulan kurallar "Güvenlik Duvarı Kuralları" sekmesinden görülebilir ve silinebilir.
+
+Not: Bu eklentinin çalışabilmesi için sistem üzerinde UFW kurulu ve etkin olmalıdır.
 
 # Ekran Görüntüleri
 Dinleyen Portlar </br>
