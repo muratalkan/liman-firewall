@@ -1,0 +1,18 @@
+{
+    "name": "Firewall",
+    "publisher": "Administrator",
+    "version": "0.0.1",
+    "version_code": 3,
+    "database": [],
+    "widgets": [],
+    "language": "php",
+    "status": 0,
+    "service": null,
+    "supportedLiman": "1.5.2",
+    "support": "administrator@liman.dev",
+    "icon": "shield-alt",
+    "require_key": "false",
+    "verification": null,
+    "dependencies": null,
+    "sslPorts": null
+}
