@@ -1,0 +1,31 @@
+{
+    "name": "Firewall",
+    "publisher": "Administrator",
+    "version": "1.1.0",
+    "version_code": 10,
+    "database": [],
+    "widgets": [
+        {
+            "target": "getListeningPortCount",
+            "type": "count_box",
+            "name": "Açık Port Sayısı",
+            "icon": "ethernet"
+        },
+        {
+            "target": "getFirewallRulesCount",
+            "type": "count_box",
+            "name": "Güvenlik Duvarı Kural Sayısı",
+            "icon": "shield-alt"
+        }
+    ],
+    "language": "php",
+    "status": 0,
+    "service": null,
+    "supportedLiman": "1.7.0",
+    "support": "administrator@liman.dev",
+    "icon": "shield-alt",
+    "require_key": "false",
+    "verification": null,
+    "sslPorts": null,
+    "dependencies": "ufw lsof"
+}
