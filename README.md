@@ -1,6 +1,6 @@
-Liman MYS | Firewall Extension
+# Liman MYS | Firewall Extension
 
-This extension is a basic Firewall management tool on the Linux servers. Through this extension, UFW may be enabled or disabled. Also, the number of listening port and number of firewall rules can be viewed. The UFW extension also shows listening ports on the server and enables users to allow or block. If user wants to add a custom firewall rule, he/she can benefit from the "Firewall Rules" tab. In addition, all created rules can be viewed and deleted under the "Firewall Rules" tab. 
+This extension is a basic Firewall management tool on Linux servers. Through this extension, UFW may be enabled or disabled. Also, the number of listening ports and the number of firewall rules can be viewed. The UFW extension also shows listening ports on the server and enables users to allow or block them. If a user wants to add a custom firewall rule, he/she can benefit from the "Firewall Rules" tab. In addition, all created rules can be viewed and deleted under the "Firewall Rules" tab.
 
 For more information:
 - https://liman.havelsan.com.tr/
@@ -12,10 +12,10 @@ For more information:
 # Screenshots
 Listening Ports Tab </br>
 <kbd>
-  ![scr01](/screenshots/tab1.jpg)
+  ![scr01](/screenshots/listeningPortsTab.jpg)
 </kbd>
 
 Firewall Rules Tab </br>
 <kbd>
-  ![scr02](/screenshots/tab2.jpg)
+  ![scr02](/screenshots/firewallRulesTab.jpg)
 </kbd>
