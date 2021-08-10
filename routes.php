@@ -21,4 +21,6 @@ return [
     'delete_ufw_rule' => 'FirewallController@deleteRule',
     'allow_listening_port' => 'FirewallController@allowPort',
     'deny_listening_port' => 'FirewallController@denyPort',
+
+    'get_firewall_logs' => 'FirewallController@getFirewallLogs'
 ];
