@@ -59,19 +59,19 @@ if (!$checkPackage) {
             </h3>
           </li>
           <li class="nav-item">
-            <a class="nav-link active mb-1" style="color:white;" onclick="getListeningPorts()" id="custom-tabs-two-page1-tab" data-toggle="pill" href="#custom-tabs-two-page1" role="tab" aria-controls="custom-tabs-two-page1" aria-selected="true">{{ __('Listening Ports') }}</a>
+            <a class="nav-link active mb-1" style="color:white;" onclick="getListeningPorts()" id="listeningPorts" data-toggle="pill" href="#tab_listeningPorts" role="tab" aria-controls="tab_listeningPorts" aria-selected="true">{{ __('Listening Ports') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mb-1"  style="color:black;" onclick="getFirewallRules()" id="custom-tabs-two-page2-tab" data-toggle="pill" href="#custom-tabs-two-page2" role="tab" aria-controls="custom-tabs-two-page2" aria-selected="false" >{{ __('Firewall Rules') }}</a>
+            <a class="nav-link mb-1"  style="color:black;" onclick="getFirewallRules()" id="firewallRules" data-toggle="pill" href="#tab_firewallRules" role="tab" aria-controls="tab_firewallRules" aria-selected="false" >{{ __('Firewall Rules') }}</a>
           </li>
         </ul>
       </div>
       <div class="card-body main-body pb-0 pl-2 pr-2 pt-3">
         <div class="tab-content" id="custom-tabs-two-tabContent">
-          <!-------------------------------------------- Tab 1 ---------------------------------------------->
-          @include('pages.listening_ports')
-          <!-------------------------------------------- Tab 2 ---------------------------------------------->
-          @include('pages.firewall_rules')
+            <!-------------------------------------------- Tab 1 ---------------------------------------------->
+            @include('pages.listening_ports')
+            <!-------------------------------------------- Tab 2 ---------------------------------------------->
+            @include('pages.firewall_rules')
         </div>
       </div>
     </div>
@@ -87,7 +87,6 @@ if (!$checkPackage) {
     });
 
     function getContent(){
-      getListeningPorts();
       getTotalListeningPorts();
       getTotalUfwRules();
     }
@@ -202,3 +201,13 @@ if (!$checkPackage) {
     });
 
 </script>
+
+<style>
+    .swal2-container {
+        z-index: 1000001;
+    }
+
+    .modal{
+        z-index: 1000000;
+    }
+</style>
