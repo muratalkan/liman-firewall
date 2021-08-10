@@ -1,13 +1,19 @@
-<div class="tab-pane fade" id="custom-tabs-two-page2" role="tabpanel" aria-labelledby="custom-tabs-two-page2-tab">
-  <div class="card card-warning card-tabs firewallCard">
+<div class="tab-pane fade" id="tab_firewallRules" role="tabpanel" aria-labelledby="firewallRules">
+  <div class="card card-warning card-tabs firewallCard verflow-auto">
     <div class="card-header">
       <h3 class="card-title font-weight-bold">{{ __('Firewall Rules') }}</h3>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" onclick="addCustomUFWRule()">
           <i class="fas fa-plus"></i>
         </button>
+        <button type="button" class="btn btn-tool" onclick="getFirewallLogs()">
+          <i class="fas fa-file"></i>
+        </button>
         <button type="button" onclick="refreshFirewallRules()" class="btn btn-tool refresh-button">
           <i class="fas fa-sync-alt"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="maximize" id="maximizeButton">
+            <i class="fas fa-expand"></i>
         </button>
       </div>
     </div>
@@ -20,6 +26,17 @@
   </div>
 </div>
 
+@component('modal-component',[
+        "id"=>"firewallLogsModal",
+        "title" => "Firewall Logs"
+    ])
+
+    <div style="background:black; height:500px; overflow-y: scroll;">
+        <pre id="firewallLogs" style="color:white; white-space:pre-wrap; word-wrap:break-word;"></pre>
+    </div>
+
+@endcomponent
+
 
 <script>
 
@@ -28,9 +45,8 @@
     });
 
     function getFirewallRules(){
-      showSwal('{{__("Loading")}}...', 'info');
+      showSwal('{{__("Loading")}}...', 'info', 2500);
       request("{{API('get_firewall_rules')}}", new FormData(), function(response) {
-          Swal.close();
           $('#firewallRules-table').html(response).find('table').DataTable(dataTablePresets('normal'));
           $('.firewallCard').find('.table-overlay').hide();
           getTotalUfwRules();
@@ -79,7 +95,7 @@
       var id = row.closest('tr').querySelector('#id').innerHTML;
       const toAddr = row.closest('tr').querySelector('#toAddr').innerHTML;
         Swal.fire({
-            title: `<h5>ID: ${id} | Port: ${toAddr}</h5>`,
+            title: `<h5>ID: ${id} | ${toAddr}</h5>`,
             text: "{{ __('Are you sure you want to delete this firewall rule?') }}",
             type: 'warning',
             showCancelButton: true,
@@ -102,6 +118,19 @@
               },
               allowOutsideClick: false
         });
+    }
+
+    function getFirewallLogs(){
+      showSwal('{{__("Loading")}}...', 'info');
+      request("{{API('get_firewall_logs')}}", new FormData, function(response) {
+          const output = JSON.parse(response).message;
+          $('#firewallLogsModal').find('#firewallLogs').html(output).parent().animate({scrollTop: 999999999}, 1000);
+          Swal.close();
+          $('#firewallLogsModal').modal('show');
+      }, function(response) {
+          const error = JSON.parse(response).message;
+          Swal.fire("{{ __('Error') }}!", error, "error");
+      });
     }
 
     function refreshFirewallRules(){
