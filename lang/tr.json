@@ -15,6 +15,7 @@
     "User": "Kullanıcı",
     "Adress:Port": "Adres:Port",
     "Protocol": "Protokol",
+    "Protocol/IP": "Protokol/IP",
     "Status": "Durum",
     "Operation": "İşlem",
     "Adress": "Adres",
@@ -25,7 +26,7 @@
     "Denied:": "Engellenen:",
     "Firewall is active": "Güvenlik duvarı etkin",
     "Firewall is not active!": "Güvenlik duvarı etkin değil!",
-    "Firewall has been enabled": "Günvelik duvarı etkinleştirildi",
+    "Firewall has been enabled": "Güvenlik duvarı etkinleştirildi",
     "Firewall could not be enabled!": "Güvenlik duvarı etkinleştirilemedi",
     "Firewall has been disabled": "Güvenlik duvarı devre dışı bırakıldı",
     "Firewall could not be disabled!": "Güvenlik duvarı etkinleştirilemedi!",
@@ -51,5 +52,7 @@
     "Please, do not write these prefixes; ": "Lütfen, bu önekleri yazmayınız; ",
     "Are you sure you want to delete this firewall rule?": "Bu güvenlik duvarı kuralını silmek istediğinize emin misiniz?",
 
-    "In order to use this extension, you must install the 'ufw' and 'lsof' packages on the server. You can install them by clicking on 'Install Packages' button below.":"Bu eklentiyi kullanabilmek için 'ufw' ve 'lsof' paketlerini sunucuya yüklemeniz gerekmektedir. Aşağıdaki yer alan 'Paketleri Yükle' butonunu kullanarak kurulumu gerçekleştirebilirsiniz"
+    "In order to use this extension, you must install the 'ufw' and 'lsof' packages on the server. You can install them by clicking on 'Install Packages' button below.":"Bu eklentiyi kullanabilmek için 'ufw' ve 'lsof' paketlerini sunucuya yüklemeniz gerekmektedir. Aşağıdaki yer alan 'Paketleri Yükle' butonunu kullanarak kurulumu gerçekleştirebilirsiniz.",
+    "Install Packages": "Paketleri Yükle"
+
 }
