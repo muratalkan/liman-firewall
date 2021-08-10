@@ -39,7 +39,7 @@ class FirewallController
         }
         
         return view('components.firewallRules-table', [
-			'firewallRulesData' => $parsedRules
+			'firewallRules' => $parsedRules
 		]);
     }
 
@@ -133,6 +133,12 @@ class FirewallController
 
 		return $result;
 	}
+
+    function getFirewallLogs(){
+        return respond(
+            Command::runSudo('tail -100 /var/log/ufw.log')
+        );
+    }
 
     private function getUFWStatus(){
         $ufwStatus = Command::runSudo('ufw status');
