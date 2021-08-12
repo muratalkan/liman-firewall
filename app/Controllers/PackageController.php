@@ -9,7 +9,7 @@ class PackageController
 
 	public static function verify() {
         
-		$pckStr = "'ufw' 'net-tools'";
+		$pckStr = "'ufw' 'lsof'";
 		
 		$check = (bool) Distro::debian(
 			"dpkg -s ".$pckStr." 2>/dev/null 1>/dev/null && echo 1 || echo 0"
