@@ -16,7 +16,7 @@ class InstallPackage extends Task
 
 		$packages = ['ufw', 'lsof'];
 
-		$this->control = Distro::debian('apt\|dpkg')
+		$this->control = Distro::debian('apt|dpkg')
 			->centos('yum install')
 			->get();
 
